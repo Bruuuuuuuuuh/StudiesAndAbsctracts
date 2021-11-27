@@ -27,6 +27,60 @@ Some caracteristics about enums:
     instance methods, class, etc.
       
       
+Declaration of enums:
+		
+	public enum Letters {
+		A, J, Q, K;
+	}
+	
+Inicialization of enums:
+
+	public enum CartasEnum {
+		J(11),Q(12),K(13),A(14);
+
+		public int valorCarta;
+
+		CartasEnum(int valor) {
+			valorCarta = valor;
+		}
+	}
+      
+
+Enum types can be used any time you need to represent a fixed set of constants.
+
+Creation and invocation of an enum type:
+
+	public enum MenuOptions {
+		SAVE(1), PRINT(2), OPEN(3), VIEW(4), CLOSE(5);
+
+		private final int valor;
+			MenuOptions(int OptionValue){
+			value = OptionValue;
+		}
+		
+		public int getValue(){
+			return value;
+		}
+	}
+	
+<!--End enum archive-->
+<!--Init main archive that invokes the enums  -->
+
+	public class EnumInv {
+		public static void chooseOption(MenuOptions option){
+			if(option == MenuOptions.SAVE){
+				System.out.println("Saving file!");
+			}
+			else if(options == MenuOptions.OPEN){
+				System.out.println("Opening file!");
+			}
+		}
+
+			public static void main(String[] args) {
+				chooseOption(MenuOptions.OPEN);
+			}
+	}
+
 Examples of enums:
 
     package com.pernalonga.helpdesk.domain.enums;
