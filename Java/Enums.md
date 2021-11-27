@@ -9,6 +9,7 @@ heritage.
 Some caracteristics about enums:
 
     Instances of enum types are created and named along with the class declaration, 
+    
     being fixed and immutable (the value is fixed).;
 
     It is not allowed to create new instances with the new keyword;
@@ -16,12 +17,14 @@ Some caracteristics about enums:
     The constructor is declared private, although it doesn't need an explicit private modifier;
 
     Following the convention, as they are constant and immutable objects (static final),
+    
     the declared names receive all letters in UPPERCASE;
 
     Instances of enum types must have only one name;
 
-    Optionally, the class declaration can include instance variables, constructor, instance
-    methods, class, etc.
+    Optionally, the class declaration can include instance variables, constructor,
+    
+    instance methods, class, etc.
       
       
 Examples of enums:
