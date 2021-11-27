@@ -85,40 +85,38 @@ Examples of enums:
 
     package com.pernalonga.helpdesk.domain.enums;
 
-    public enum Perfil {
+    public enum Profile {
 	
       ADMIN(0, "ROLE_ADMIN"), CLIENT(1, "ROLE_CLIENT"), TECNIC(2, "ROLE_TECNIC");
 
-      private Integer codigo;
-      private String descricao;
+      private Integer code;
+      private String description;
 
-      private Perfil(Integer codigo, String descricao) {
-        this.codigo = codigo;
-        this.descricao = descricao;
+      private Profile(Integer code, String description) {
+        this.code = code;
+        this.description = description;
       }
 
-      public Integer getCodigo() {
-        return codigo;
+      public Integer getCode() {
+        return code;
       }
 
-      public String getDescricao() {
-        return descricao;
+      public String getDescription() {
+        return description;
       }
 
-      public static Perfil toEnum(Integer cod) {
+      public static Profile toEnum(Integer cod) {
         if(cod == null) {
           return null;
         }
 
-        for(Perfil x : Perfil.values()) {
-          if(cod.equals(x.getCodigo())) {
+        for(Profile x : Profile.values()) {
+          if(cod.equals(x.getCode())) {
             return x;
           }
         }
 
-        throw new IllegalArgumentException("Perfil invalido");
+        throw new IllegalArgumentException("Invalid profile");
       }
 
     }
-
-      
