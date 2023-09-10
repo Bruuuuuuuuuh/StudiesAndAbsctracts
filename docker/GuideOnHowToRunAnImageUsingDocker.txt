@@ -1,0 +1,40 @@
+* install docker gui from AUR or bash version by terminal (pacman -S docker on arch)
+
+  PULL the image you want to use by using the docker pull command
+
+  ex:
+
+    # docker pull ubuntu
+
+run the image on bash by using 
+
+    # docker run -ti --rm ubuntu /bin/bash
+
+  This command tells Docker to run the Docker Ubuntu container in an interactive terminal mode (-ti).
+  The /bin/bash argument is a way of telling the container to run the Bash shell terminal.
+  Finally, the --rm flag instructs Docker to automatically remove the Ubuntu Docker container after we stop it.
+
+  You can verify if docker is running the os you want by using
+
+    $ cat /etc/os-release
+
+  which will return the exact details about the image you want
+
+  if you want to run an specific version of the os you may as well add the version ID
+
+    # docker pull ubunutu:20.04
+
+  After closing the docker terminal all the changes will be discarted. To save any alterations you may've done, use the preceding command
+
+    $ docker commit -p container_id new_container_name
+
+  notice that there's no need to use root mode while running your docker image, as it will altomatically log in by root.
+  Also, remember to replace "container_id" with whatever id docker shows you on terminal
+
+  ex:
+    $ docker commit -p 132013ca9750 myubuntu
+
+
+  You can also check the image id by running sudo docker ps (if the image is still running on another terminal) or docker images (if it isn't)
+Be aware that the "commit" command doesnt save your image, but creates another one with all the changes you've made. to acess the new image
+you gotta run the command on the 11 line replacing "ubuntu" with "myubuntu"
